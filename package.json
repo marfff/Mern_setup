@@ -4,6 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "backend": "nodemon index.js",
+    "frontend": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run backend\"  \"npm run frontend\"",
+    "bootstrap": "npm install -d && cd frontend && npm install -d",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,6 +16,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "nodemon": "^2.0.6"
-    "start": "nodemon index.js"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0"
   }
 }
